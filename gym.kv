@@ -1,0 +1,116 @@
+WindowManager:
+    MainWindow:
+    TreningWindow:
+    KalkulatorWindow:
+    WatchWindow:
+
+<MainWindow>:
+    name: "main"
+    GridLayout:
+        rows:2
+        cols:1
+        BoxLayout:
+            size_hint: 1, .15
+            orientation: "horizontal"
+            canvas.before:
+                Color:
+                    rgba: (1, 1, 1, .4)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            Image:
+                source: 'image/logo3.png'
+                size_hint: None, 1
+                # width: "80dp"
+                # height: "80dp"
+                allow_stretch: True
+            Label:
+                text: "GYM BUDDY"
+                size_hint: None, 1
+                bold: True
+                font_size: "18dp"
+
+        BoxLayout:
+            canvas.before:
+                Color:
+                    rgba: (1, 1, 1, .5)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            padding: 40, 80, 40, 80
+            spacing: "10dp"
+            orientation: "vertical"
+            Button:
+                text: "TRENING"
+                font_size: "24dp"
+                bold: True
+                on_release:
+                    app.root.current = "trening"
+                    root.manager.transition.direction = "left"
+            Button:
+                text: "MAKRO KALKULATOR"
+                font_size: "24dp"
+                bold: True
+            Button:
+                text: "STOPWATCH"
+                font_size: "24dp"
+                bold: True
+
+<TreningWindow>:
+    name: "trening"
+    GridLayout:
+        cols:1
+        rows:2
+        PageLayout:
+            BoxLayout:
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                Image:
+                    source: 'image/chest.JPG'
+                    size_hint: 1, 1
+                    # width: "80dp"
+                    # height: "80dp"
+                    allow_stretch: True
+            BoxLayout:
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                Image:
+                    source: 'image/back.JPG'
+                    size_hint: 1, 1
+                    # width: "80dp"
+                    # height: "80dp"
+                    allow_stretch: True
+            BoxLayout:
+                canvas.before:
+                    Color:
+                        rgba: (1, 1, 1, 1)
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+                Image:
+                    source: 'image/biceps.JPG'
+                    size_hint: 1, 1
+                    # width: "80dp"
+                    # height: "80dp"
+                    allow_stretch: True
+        BoxLayout:
+            size_hint: 1, .1
+            orientation: "horizontal"
+            Button:
+                width: "120dp"
+                height: "120dp"
+                text: "VRNI SE NAZAJ"
+                on_release:
+                    app.root.current = "main"
+                    root.manager.transition.direction = "right"
+
+<KalkulatorWindow:>
+    
